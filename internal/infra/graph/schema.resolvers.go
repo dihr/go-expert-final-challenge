@@ -14,8 +14,8 @@ import (
 func (r *mutationResolver) CreateOrder(ctx context.Context, input *model.OrderInput) (*model.Order, error) {
 	dto := usecase.OrderInputDTO{
 		ID:    input.ID,
-		Price: float64(input.Price),
-		Tax:   float64(input.Tax),
+		Price: input.Price,
+		Tax:   input.Tax,
 	}
 	output, err := r.CreateOrderUseCase.Execute(dto)
 	if err != nil {
@@ -23,9 +23,9 @@ func (r *mutationResolver) CreateOrder(ctx context.Context, input *model.OrderIn
 	}
 	return &model.Order{
 		ID:         output.ID,
-		Price:      float64(output.Price),
-		Tax:        float64(output.Tax),
-		FinalPrice: float64(output.FinalPrice),
+		Price:      output.Price,
+		Tax:        output.Tax,
+		FinalPrice: output.FinalPrice,
 	}, nil
 }
 
