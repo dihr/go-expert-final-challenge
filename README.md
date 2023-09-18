@@ -27,7 +27,7 @@ Não esqueça de criar as migrações necessárias e o arquivo api.http com a re
 1. Clone the repository:
 
    ```shell
-   git clone git@github.com:dihr/go-expert-desafio-002.git
+   git clone git@github.com:dihr/go-expert-final-challenge.git
    ```
 2. Sync dependencies with:
    ```shell
