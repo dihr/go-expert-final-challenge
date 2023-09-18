@@ -41,7 +41,7 @@ Não esqueça de criar as migrações necessárias e o arquivo api.http com a re
 4. Run up migrations:
 
    ```shell
-   migrate -path=sql/migrations -database= "mysql://root:root@tcp(localhost:3306)/orders" -verbose up
+   migrate -path=sql/migrations -database="mysql://root:root@tcp(localhost:3306)/orders" -verbose up
    ```
 5. Enter cmd/ordersystem folder:
 
