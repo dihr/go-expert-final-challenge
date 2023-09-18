@@ -29,34 +29,38 @@ Não esqueça de criar as migrações necessárias e o arquivo api.http com a re
    ```shell
    git clone git@github.com:dihr/go-expert-desafio-002.git
    ```
-2. Start docker compose services:
+2. Sync dependencies with:
+   ```shell
+   go mod tidy
+   ```   
+3. Start docker compose services:
 
-    ```shell
+   ```shell
    docker-compose up -d
    ```
-3. Run up migrations:
+4. Run up migrations:
 
-    ```shell
+   ```shell
    migrate -path=sql/migrations -database= "mysql://root:root@tcp(localhost:3306)/orders" -verbose up
    ```
-4. Enter cmd/ordersystem folder:
+5. Enter cmd/ordersystem folder:
 
-    ```shell
+   ```shell
    cd cmd/ordersystem/
    ```
-5. Run main and wire file:
+6. Run main and wire file:
 
-    ```shell
+   ```shell
    go run main.go wire_gen.go
    ```   
 
 # Testing the ListOrder endpoints
 
 - list orders through GRPC:
-    ![img_3.png](img_3.png)
+  ![img_3.png](img_3.png)
 
 - list orders through graphQL:
-   ![img_1.png](img_1.png)
+  ![img_1.png](img_1.png)
 
-- list orders through REST: 
-   ![img_2.png](img_2.png)
+- list orders through REST:
+  ![img_2.png](img_2.png)
